@@ -1,6 +1,6 @@
 export const Profile = () => {
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 cursor-pointer">
       <div className="flex flex-col  mt-2 justify-between">
         <img src="./person.png.png" alt="Profile" className="w-5 h-5 ml-2" />
         <h1 className="text-xs font-semibold "> Profile</h1>
@@ -25,7 +25,7 @@ export const Profile = () => {
         <h1 className="font-semibold text-xs">Whislist</h1>
       </div>
       <div>
-        <div className="mt-1.5 ml-2">
+        <div className="mt-1.5 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -41,8 +41,8 @@ export const Profile = () => {
             />
           </svg>
         </div>
-        <div>
-          <h1 className="font-semibold text-xs">Whislist</h1>
+        <div className="">
+          <h1 className="font-semibold text-xs ">Bag</h1>
         </div>
       </div>
     </div>
