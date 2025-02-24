@@ -23,7 +23,7 @@ export const DashBoard = () => {
         </div>
       </div>
 
-      <div className="flex gap-4 justify-center mb-3">
+      <div className=" flex md:flex gap-4 justify-center mb-3">
         <Card
           name={"./card.jpg"}
           dressname={" Eterna Long dress Black"}
