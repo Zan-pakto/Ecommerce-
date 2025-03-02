@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { FaGoogle, FaFacebookF, FaEye, FaEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Email:", email, "Password:", password);
@@ -73,6 +75,9 @@ export const Login = () => {
             </div>
 
             <button
+              onClick={() => {
+                navigate("/dashboard");
+              }}
               type="submit"
               className="w-full rounded-lg bg-purple-500 p-3 text-white font-bold text-xl transition-transform hover:bg-purple-600"
             >
@@ -95,9 +100,14 @@ export const Login = () => {
             </button>
           </div>
 
-          <p className="mt-8 text-center text-sm text-gray-600">
+          <p className="mt-8 text-center text-sm text-gray-600 font-semibold ">
             Don’t have an account?{" "}
-            <a href="#" className="text-purple-500 hover:underline">
+            <a
+              onClick={() => {
+                navigate("/signup");
+              }}
+              className="text-purple-500 hover:underline cursor-pointer"
+            >
               Sign up
             </a>
           </p>

@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { FaGoogle, FaFacebookF, FaEye, FaEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export const Signup = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -84,13 +87,15 @@ export const Signup = () => {
             </div>
 
             <button
+              onClick={() => {
+                navigate("/dashboard");
+              }}
               type="submit"
               className="w-full rounded-lg bg-purple-500 p-3 text-white font-bold text-xl transition-transform hover:bg-purple-600"
             >
               Log in
             </button>
           </form>
-
           <div className="my-6 flex items-center">
             <div className="flex-1 border-t border-gray-300"></div>
             <span className="mx-4 text-sm text-gray-400">Or Continue With</span>
@@ -106,9 +111,15 @@ export const Signup = () => {
             </button>
           </div>
 
-          <p className="mt-8 text-center text-sm text-gray-600">
+          <p className="mt-8 text-center text-sm text-gray-600 font-semibold">
             Already have an account?{" "}
-            <a href="#" className="text-purple-500 hover:underline">
+            <a
+              onClick={() => {
+                navigate("/login");
+              }}
+              className="text-purple-500 hover:underline cursor-pointer
+              "
+            >
               Login
             </a>
           </p>
