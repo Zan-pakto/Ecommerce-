@@ -1,6 +1,17 @@
+import { useNavigate } from "react-router-dom";
+
 export const Card = ({ name, dressname, price }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className=" cursor-pointer flex flex-col w-[16%] border border-gray-300 rounded-lg shadow-md overflow-hidden hover:scale-110 hover:shadow-2xl">
+    <div
+      onClick={() => {
+        navigate("/description", {
+          state: { name: name, dressname: dressname, price: price },
+        });
+      }}
+      className=" cursor-pointer flex flex-col w-[16%] border border-gray-300 rounded-lg shadow-md overflow-hidden hover:scale-110 hover:shadow-2xl"
+    >
       <div className="w-full h-full">
         <img
           src={name}

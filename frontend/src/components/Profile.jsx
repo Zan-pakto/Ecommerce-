@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export const Profile = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex gap-4 cursor-pointer">
       <div className="flex flex-col  mt-2 justify-between">
@@ -25,7 +28,12 @@ export const Profile = () => {
         <h1 className="font-semibold text-xs">Whislist</h1>
       </div>
       <div>
-        <div className="mt-1.5 ">
+        <div
+          onClick={() => {
+            navigate("/cart");
+          }}
+          className="mt-1.5 "
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
