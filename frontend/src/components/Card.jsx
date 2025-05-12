@@ -6,9 +6,11 @@ export const Card = ({ name, dressname, price }) => {
   return (
     <div
       onClick={() => {
-        navigate("/description", {
-          state: { name: name, dressname: dressname, price: price },
-        });
+        localStorage.setItem(
+          "productdetails",
+          JSON.stringify({ name, dressname, price })
+        );
+        navigate(`/description`);
       }}
       className=" cursor-pointer flex flex-col w-[16%] border border-gray-300 rounded-lg shadow-md overflow-hidden hover:scale-110 hover:shadow-2xl"
     >

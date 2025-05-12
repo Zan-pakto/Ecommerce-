@@ -5,7 +5,14 @@ export const Profile = () => {
   return (
     <div className="flex gap-4 cursor-pointer">
       <div className="flex flex-col  mt-2 justify-between">
-        <img src="./person.png.png" alt="Profile" className="w-5 h-5 ml-2" />
+        <img
+          src="./person.png.png"
+          alt="Profile"
+          className="w-5 h-5 ml-2"
+          onClick={() => {
+            navigate("/profilee");
+          }}
+        />
         <h1 className="text-xs font-semibold "> Profile</h1>
       </div>
       <div className="mt-1.5 ">
